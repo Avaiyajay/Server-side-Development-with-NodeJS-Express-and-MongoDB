@@ -5,6 +5,9 @@ const morgan = require('morgan');
 
 //importing routers
 const indexRouter = require("./routes/index");
+const dishRouter = require("./routes/dishRouter");
+const promotionRouter = require("./routes/promotionRouter");
+const leaderRouter = require("./routes/leaderRouter");
 
 const app = express()
 //app setup 
@@ -16,7 +19,11 @@ app.use(expressLayouts);
 
 
 // app.use(express.static(__dirname+'/public'));
-app.use('/',indexRouter);
+// app.use('/',indexRouter);
+app.use("/dishes" , dishRouter);
+app.use("/promotions" , promotionRouter);
+app.use("/leaders" , leaderRouter);
+
 
 
 
