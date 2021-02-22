@@ -1,5 +1,20 @@
 const mongoose = require('mongoose');
 
+
+const commentSchema = new mongoose.Schema({
+    author : {
+        type : String,
+        required : true,
+    },
+    comment : {
+        type : String,
+        required : true
+    }
+},
+{
+    timestamps : true
+})
+
 const dishesSchema = new mongoose.Schema({
     dishname : {
         type : String,
@@ -9,7 +24,8 @@ const dishesSchema = new mongoose.Schema({
     description : {
         type : String,
         required : true
-    }
+    },
+    comments : [ commentSchema ]
 },
 {
     timestamps : true
